@@ -10,6 +10,16 @@ import {MongooseModule} from '@nestjs/mongoose'
     imports:[
         MongooseModule.forRootAsync({
             useFactory: async (configService:ConfigService)=>{
+                
+                if (configService.get<string>('MONGO_HOST')){
+                    return {
+                        uri:`mongodb://${(configService.get<string>('MONGO_HOST'))}:${(configService.get<string>('MONGO_PORT'))}`,
+                        user:configService.get<string>('MONGO_USER'),
+                        pass:configService.get<string>('MONGO_PASS'),
+                        dbName: configService.get<string>('MONGO_DB')
+                    }
+                }
+                
                 return {
                     uri:`mongodb://${(configService.get<string>('MONGO_HOST') || configService.get<string>('mongodbConfig.host'))}`,
                     readPreference:'primary',
