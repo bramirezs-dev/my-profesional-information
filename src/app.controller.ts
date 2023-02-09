@@ -1,12 +1,14 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Inject } from '@nestjs/common';
 import { AppService } from './app.service';
+import { Db } from 'mongodb';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService,
+    @Inject('MONGO') private database:Db) {}
 
   @Get()
-  getHello(): string {
+  async getHello (): Promise<string> {
     return this.appService.getHello();
   }
 }
