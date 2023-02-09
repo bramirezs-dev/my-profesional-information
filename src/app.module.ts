@@ -7,6 +7,7 @@ import { DatabaseModule } from './modules/database/database.module';
 
 import configs from '@configs';
 import { SkillsModule } from './modules/skills/skills.module';
+import { ExperiencesModule } from './modules/experiences/experiences.module';
 
 @Module({
   imports: [DatabaseModule, ConfigModule.forRoot({
@@ -14,6 +15,7 @@ import { SkillsModule } from './modules/skills/skills.module';
     isGlobal:true
   }),
   SkillsModule,
+  ExperiencesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
