@@ -1,28 +1,28 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "type": "node",
-        "request": "launch",
-        "name": "Debug Nest Framework",
-        "runtimeExecutable": "npm",
-        "runtimeArgs": [
-          "run",
-          "start:debug",
-          "--",
-          "--inspect-brk"
-        ],
-        "env": {
-          "NODE_ENV": "dev",
-        },
-        "restart": true,
-        "sourceMaps": true,
-        "console": "internalConsole",
-        "outputCapture": "std",
-      }
-    ]
-  }
-  
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Nest Framework",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start:debug", "--", "--inspect-brk"],
+      "env": {
+        "NODE_ENV": "pro",
+        "MONGO_DB": "profesional_information",
+        "MONGO_HOST": "containers-us-west-185.railway.app",
+        "MONGO_PASS": "xnx4fexjfKbIrFiWvhys",
+        "MONGO_PORT": "5472",
+        "MONGO_USER": "mongo",
+        "PORT": "5008"
+      },
+      "restart": true,
+      "sourceMaps": true,
+      "console": "internalConsole",
+      "outputCapture": "std"
+    }
+  ]
+}
